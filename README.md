@@ -1,7 +1,7 @@
 cptnHook
 
 
-ABSTRACT 
+ABSTRACT \n
 cptnHook is a tool which is able to display the values of the arguments passed 
 to mathematical functions in a scientific application (currently exp(x), 
 sqrt(x), sin(x), cos(x), tan(x), asin(x), acos(x), atan(x)).
@@ -31,7 +31,7 @@ and obtaining the stack trace of each mathematical function that is used.
 
 The outputs of the tool are provided in ROOT format for further on analysis.
 
-INSTALLATION
+INSTALLATION \n
 Prerequisites:
 1.	You need to download PIN
     go here: https://software.intel.com/en-us/articles/pin-a-binary-instrumentation-tool-downloads
