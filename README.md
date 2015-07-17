@@ -62,7 +62,7 @@ The outputs of the tool are provided in ROOT (https://root.cern.ch/drupal/) form
 
     `sh getStarted.sh`
   
-  This file will generate all required files and will construct a library called "cptnHook.so" which you will later on   use to hook your program.
+  This file will generate all required files and will construct a library called "libcptnHook.so" which you will later on   use to hook your program.
 
 2. You may now run this library along an example that exists in the folder Tests. Simply run the script
   "Compile_and_Run_Test.sh" with the following command:
@@ -75,4 +75,4 @@ The outputs of the tool are provided in ROOT (https://root.cern.ch/drupal/) form
     
   and then run it alongside PIN and the cptnHook library:
   
-    `$PINDIR/pin -t cptnHook.so -- ../myProg`
+    `$PINDIR/pin -t libcptnHook.so -- ../myProg`
