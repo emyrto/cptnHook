@@ -143,7 +143,7 @@ print "/* ======================================================================
 /* ========================================================================= */"
 print "VOID Image(IMG img, VOID *v) \n{"
 for i,func in enumerate(funcList):
-	print "	",script %(func, func.upper(), func, func, func, func, func.upper(), func, func, func, func, func, func), "\n"
+	print "	",script %(func, func.upper(), func, func, func, func, func.upper(), func, func, func, func), "\n"
 print "}"
 
 print "\n"
