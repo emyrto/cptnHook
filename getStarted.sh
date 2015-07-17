@@ -1,14 +1,7 @@
-# Prerequisites:
-# 
-#1.	You need to download PIN
-#	go here: https://software.intel.com/en-us/articles/pin-a-binary-instrumentation-tool-downloads
-#	and download the appropriate version for LINUX according to your compiler.
-#
-#2.	set PINDIR as the path to the place you downloaded PIN
-#	PINDIR=[path]
-#	export $PINDIR
-#
-#3	You need to install ROOT
+#! /usr/bin/env sh
+
+#	Reminder:
+# You need to install ROOT
 #	go here: https://root.cern.ch/drupal/
 #	for further documentation
 
@@ -17,16 +10,36 @@ echo $PINDIR
 # Get cptnHook
 #git init
 #git clone https://github.com/emyrto/cptnHook.git
+
+# Get Pin
+PINBASE="pin-2.14-71313-gcc.4.4.7-linux"
+PINTARBALL="$PINBASE".tar.gz
+echo Getting PIN...
+wget http://software.intel.com/sites/landingpage/pintool/downloads/"$PINTARBALL"
+echo Unpacking PIN...
+tar -zxf $PINTARBALL
+PINDIR=`pwd`/"$PINBASE"
+
 cd src
 
 # Generate the PIN interceptors
+echo Generating interceptor functions...
 python interceptorGen.py > interceptorGen.h
 
 # Compile the PIN tool
-g++ -DBIGARRAY_MULTIPLIER=1 -Wall -Werror -Wno-unknown-pragmas -fno-stack-protector -Wno-unused-variable -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX  -I$PINDIR/source/include/pin -I$PINDIR/source/include/pin/gen -I$PINDIR/extras/components/include -I$PINDIR/extras/xed-intel64/include -I$PINDIR/source/tools/InstLib -O3 `root-config --cflags --libs` -fomit-frame-pointer -fno-strict-aliasing -L$ROOTSYS -c -o myPinHookRoot.o myPinHookRoot.cpp -std=c++11 -I/home/myrto/cctlib/src
+echo Compiling cptnHook
+CPPFLAGS="-DBIGARRAY_MULTIPLIER=1 -Wall -Werror -Wno-unknown-pragmas -fno-stack-protector -Wno-unused-variable -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fomit-frame-pointer -fno-strict-aliasing"
+CPPINCLUDES="-I"$PINDIR"/source/tools/InstLib -I"$PINDIR"/source/include/pin/ -I"$PINDIR"/source/include/pin/gen -I"$PINDIR"/extras/components/include -I"$PINDIR"/extras/xed-intel64/include -I"$PINDIR"/source/tools/InstLib"
+ROOTFLAGS="`root-config --cflags --libs`"
+PINHOOKNAME="cptnHook"
+g++ $CPPFLAGS $CPPINCLUDES $ROOTFLAGS -O3 -c -o "$PINHOOKNAME".o "$PINHOOKNAME".cpp -std=c++11
 
-mv myPinHookRoot.so ../bin
+#-L$ROOTSYS
+mv "$PINHOOKNAME".o ../bin
 cd ../bin
 
 # Make a shared library
-g++ -shared -Wl,--hash-style=sysv -Wl,-Bsymbolic -Wl,--version-script=$PINDIR/source/include/pin/pintool.ver -o cptnHook.so myPinHookRoot.o  -L$PINDIR/intel64/lib -L$PINDIR/intel64/lib-ext -L$PINDIR/intel64/runtime/glibc -L$PINDIR/extras/xed-intel64/lib -lpin -lxed -lpindwarf -ldl -L$ROOTSYS `root-config --cflags --libs`
+CPPLDFLAGS="-shared -Wl,--hash-style=sysv -Wl,-Bsymbolic -Wl,--version-script=$PINDIR/source/include/pin/pintool.ver -L$PINDIR/intel64/lib -L$PINDIR/intel64/lib-ext -L$PINDIR/intel64/runtime/glibc -L$PINDIR/extras/xed-intel64/lib -lpin -lxed -lpindwarf -ldl"
+g++ $CPPLDFLAGS  -o libcptnHook.so "$PINHOOKNAME".o  $ROOTFLAGS
+
+echo Compilation ended. Remember to set the PINDIR env variable to $PINDIR
