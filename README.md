@@ -36,6 +36,7 @@ The outputs of the tool are provided in ROOT format for further on analysis.
 INSTALLATION
 
 Prerequisites:
+
 1.	You need to download PIN
     go here: https://software.intel.com/en-us/articles/pin-a-binary-instrumentation-tool-downloads
     and download the appropriate version for LINUX according to your compiler.
