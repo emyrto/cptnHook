@@ -1,0 +1,97 @@
+Function: exp
+stack: 
+1       0x7ffe4143a6eb ./myPinHookRoot.so(+0x1376eb) [0x7ffe4143a6eb]
+2       0x7ffe4146114b ./myPinHookRoot.so(+0x15e14b) [0x7ffe4146114b]
+3       0x7ffe41465850 ./myPinHookRoot.so(+0x162850) [0x7ffe41465850]
+4       0x7ffe4149c5ea ./myPinHookRoot.so(+0x1995ea) [0x7ffe4149c5ea]
+5       0x7ffe4149d58c ./myPinHookRoot.so(+0x19a58c) [0x7ffe4149d58c]
+6       0x7ffe21930b12 [0x7ffe21930b12]
+
+expRtn ID: 2869
+--------------------------------------------------------------------------------
+Function: sqrt
+stack: 
+1       0x7ffe4143a962 ./myPinHookRoot.so(+0x137962) [0x7ffe4143a962]
+2       0x7ffe4146114b ./myPinHookRoot.so(+0x15e14b) [0x7ffe4146114b]
+3       0x7ffe41465850 ./myPinHookRoot.so(+0x162850) [0x7ffe41465850]
+4       0x7ffe4149c5ea ./myPinHookRoot.so(+0x1995ea) [0x7ffe4149c5ea]
+5       0x7ffe4149d58c ./myPinHookRoot.so(+0x19a58c) [0x7ffe4149d58c]
+6       0x7ffe21930b12 [0x7ffe21930b12]
+
+sqrtRtn ID: 2889
+--------------------------------------------------------------------------------
+Function: sin
+stack: 
+1       0x7ffe4143abd9 ./myPinHookRoot.so(+0x137bd9) [0x7ffe4143abd9]
+2       0x7ffe4146114b ./myPinHookRoot.so(+0x15e14b) [0x7ffe4146114b]
+3       0x7ffe41465850 ./myPinHookRoot.so(+0x162850) [0x7ffe41465850]
+4       0x7ffe4149c5ea ./myPinHookRoot.so(+0x1995ea) [0x7ffe4149c5ea]
+5       0x7ffe4149d58c ./myPinHookRoot.so(+0x19a58c) [0x7ffe4149d58c]
+6       0x7ffe21930b12 [0x7ffe21930b12]
+
+sinRtn ID: 2858
+--------------------------------------------------------------------------------
+Function: cos
+stack: 
+1       0x7ffe4143ae50 ./myPinHookRoot.so(+0x137e50) [0x7ffe4143ae50]
+2       0x7ffe4146114b ./myPinHookRoot.so(+0x15e14b) [0x7ffe4146114b]
+3       0x7ffe41465850 ./myPinHookRoot.so(+0x162850) [0x7ffe41465850]
+4       0x7ffe4149c5ea ./myPinHookRoot.so(+0x1995ea) [0x7ffe4149c5ea]
+5       0x7ffe4149d58c ./myPinHookRoot.so(+0x19a58c) [0x7ffe4149d58c]
+6       0x7ffe21930b12 [0x7ffe21930b12]
+
+cosRtn ID: 2857
+--------------------------------------------------------------------------------
+Function: tan
+stack: 
+1       0x7ffe4143b0c7 ./myPinHookRoot.so(+0x1380c7) [0x7ffe4143b0c7]
+2       0x7ffe4146114b ./myPinHookRoot.so(+0x15e14b) [0x7ffe4146114b]
+3       0x7ffe41465850 ./myPinHookRoot.so(+0x162850) [0x7ffe41465850]
+4       0x7ffe4149c5ea ./myPinHookRoot.so(+0x1995ea) [0x7ffe4149c5ea]
+5       0x7ffe4149d58c ./myPinHookRoot.so(+0x19a58c) [0x7ffe4149d58c]
+6       0x7ffe21930b12 [0x7ffe21930b12]
+
+tanRtn ID: 2860
+--------------------------------------------------------------------------------
+Function: asin
+stack: 
+1       0x7ffe4143b33e ./myPinHookRoot.so(+0x13833e) [0x7ffe4143b33e]
+2       0x7ffe4146114b ./myPinHookRoot.so(+0x15e14b) [0x7ffe4146114b]
+3       0x7ffe41465850 ./myPinHookRoot.so(+0x162850) [0x7ffe41465850]
+4       0x7ffe4149c5ea ./myPinHookRoot.so(+0x1995ea) [0x7ffe4149c5ea]
+5       0x7ffe4149d58c ./myPinHookRoot.so(+0x19a58c) [0x7ffe4149d58c]
+6       0x7ffe21930b12 [0x7ffe21930b12]
+
+asinRtn ID: 2864
+--------------------------------------------------------------------------------
+Function: acos
+stack: 
+1       0x7ffe4143b5b5 ./myPinHookRoot.so(+0x1385b5) [0x7ffe4143b5b5]
+2       0x7ffe4146114b ./myPinHookRoot.so(+0x15e14b) [0x7ffe4146114b]
+3       0x7ffe41465850 ./myPinHookRoot.so(+0x162850) [0x7ffe41465850]
+4       0x7ffe4149c5ea ./myPinHookRoot.so(+0x1995ea) [0x7ffe4149c5ea]
+5       0x7ffe4149d58c ./myPinHookRoot.so(+0x19a58c) [0x7ffe4149d58c]
+6       0x7ffe21930b12 [0x7ffe21930b12]
+
+acosRtn ID: 2862
+--------------------------------------------------------------------------------
+Function: atan
+stack: 
+1       0x7ffe4143b835 ./myPinHookRoot.so(+0x138835) [0x7ffe4143b835]
+2       0x7ffe4146114b ./myPinHookRoot.so(+0x15e14b) [0x7ffe4146114b]
+3       0x7ffe41465850 ./myPinHookRoot.so(+0x162850) [0x7ffe41465850]
+4       0x7ffe4149c5ea ./myPinHookRoot.so(+0x1995ea) [0x7ffe4149c5ea]
+5       0x7ffe4149d58c ./myPinHookRoot.so(+0x19a58c) [0x7ffe4149d58c]
+6       0x7ffe21930b12 [0x7ffe21930b12]
+
+atanRtn ID: 2837
+--------------------------------------------------------------------------------
+Function: exp	 value: 1
+Function: sin	 value: 2
+Function: cos	 value: 3
+Function: exp	 value: 4
+Function: sin	 value: 5
+Function: cos	 value: 6
+Function: exp	 value: 7
+Function: sin	 value: 8
+Function: cos	 value: 9
