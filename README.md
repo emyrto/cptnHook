@@ -1,7 +1,7 @@
 #**cptnHook**
 
 
-##ABSTRACT
+##Abstract
 
 cptnHook is a tool which is able to display the values of the arguments passed 
 to mathematical functions in a scientific application (currently exp(x), 
@@ -25,15 +25,16 @@ mathematical functions in a program without modifying the application's source
 code but rather by hooking into the machine code and probing the arguments of 
 the functions.
 
-cptnHook has been implemented with C++ and uses PIN - a dynamic binary 
+cptnHook has been implemented with C++ and uses PIN 
+(https://software.intel.com/en-us/articles/pintool)- a dynamic binary 
 instrumentation framework that enables the creation of dynamic program analysis 
 tools - for the purposes of probing the values inserted in mathematical functions 
 and obtaining the stack trace of each mathematical function that is used. 
 
-The outputs of the tool are provided in ROOT format for further on analysis.
+The outputs of the tool are provided in ROOT (https://root.cern.ch/drupal/) format for further on analysis.
 
 
-##INSTALLATION
+##Istallation
 
 ###Prerequisites:
 
@@ -43,7 +44,7 @@ The outputs of the tool are provided in ROOT format for further on analysis.
     
     and download the appropriate version for LINUX according to your compiler.
 
-2.	set PINDIR as the path to the place you downloaded PIN
+2.	set PINDIR as the path to the place where PIN was built:
 
     PINDIR=[path]
 
