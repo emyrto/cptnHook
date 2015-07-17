@@ -1,9 +1,9 @@
-// myPinExample WITH root
+// cptnHook.cpp
+// Use of: PIN, ROOT
 
-#include "myPinHookRoot.h"
+#include "cptnHook.h"
 #include "interceptorGen.h"
 //#include "cctlibFunctions.h"
-//#include "stacktrace.h"
 
 /* ========================================================================= */
 /* File and Trees (Initialize and Fill)                                      */
@@ -60,8 +60,6 @@ void treeFill(double x, int rtnID, int rtnEnum)//, ADDRINT addr, std::vector<Flo
 	{
 		case 0:  //exp
 			valExp = x;
-			//dummyStr = std::to_string(stackRtn);
-			//hashExp = myHash(dummyStr, myMap, ih);
 			hashExp = myHash(rtnStack, myExpMap, ihExp);
 			treeExpPntr->Fill();
 			cout << "loading... exp TTree" << "\t val: " << valExp << "\t hash: " << 			hashExp << endl;
@@ -75,41 +73,35 @@ void treeFill(double x, int rtnID, int rtnEnum)//, ADDRINT addr, std::vector<Flo
 			break;
 		case 2:  //sin
 			valSin = x;
-			//dummyStr = std::to_string(stackRtn);
 			hashSin = myHash(rtnStack, mySinMap, ihSin);
 			treeSinPntr->Fill();
 			cout << "loading... sin TTree" << "\t val: " << valSin << "\t hash: " << 			hashSin << endl;
 			break;
 		case 3:  //cos
 			valCos = x;
-			//dummyStr = std::to_string(stackRtn);
 			hashCos = myHash(rtnStack, myCosMap, ihCos);
 			treeCosPntr->Fill();
 			cout << "loading... cos TTree" << "\t val: " << valCos << "\t hash: " << 			hashCos << endl;			break;
 		case 4:  //tan
 			valTan = x;
-			//dummyStr = std::to_string(stackRtn);
 			hashTan = myHash(rtnStack, myTanMap, ihTan);
 			treeTanPntr->Fill();
 			cout << "loading... tan TTree" << "\t val: " << valTan << "\t hash: " << 			hashTan << endl;
 			break;
 		case 5:  //asin
 			valAsin = x;
-			//dummyStr = std::to_string(stackRtn);
 			hashAsin = myHash(rtnStack, myAsinMap, ihAsin);
 			treeAsinPntr->Fill();
 			cout << "loading... asin TTree" << "\t val: " << valAsin << "\t hash: " << 			hashAsin << endl;
 			break;
 		case 6:  //acos
 			valAcos = x;
-			//dummyStr = std::to_string(stackRtn);
 			hashAcos = myHash(rtnStack, myAcosMap, ihAcos);
 			treeAcosPntr->Fill();
 			cout << "loading... acos TTree" << "\t val: " << valAcos << "\t hash: " << 			hashAcos << endl;
 			break;
 		case 7:  //atan
 			valAtan = x;
-			//dummyStr = std::to_string(stackRtn);
 			hashAtan = myHash(rtnStack, myAtanMap, ihAtan);
 			treeAtanPntr->Fill();
 			cout << "loading... atan TTree" << "\t val: " << valAtan << "\t hash: " << 			hashAtan << endl;
@@ -128,7 +120,6 @@ ULong64_t myHash(const std::string& s, std::map <string, ULong64_t>& myMap, ULon
         if (iter != myMap.end()){ 
                 cout << "existing string: " << s << " " << iter->second << endl;
         }
-	// !!! WHY don't I have an error here???
 	if(iter == myMap.end())	
 	{
 		ih++;
@@ -166,6 +157,7 @@ int main(int argc, char *argv[])
     	IMG_AddInstrumentFunction(Image, 0);
     	PIN_AddFiniFunction(Fini, 0);
 	
+	// For future additions.
 	// Init Client
     	//ClientInit(argc, argv);
     	// Intialize CCTLib
