@@ -1,7 +1,7 @@
-cptnHook
+#**cptnHook**
 
 
-ABSTRACT
+##ABSTRACT
 
 cptnHook is a tool which is able to display the values of the arguments passed 
 to mathematical functions in a scientific application (currently exp(x), 
@@ -33,9 +33,9 @@ and obtaining the stack trace of each mathematical function that is used.
 The outputs of the tool are provided in ROOT format for further on analysis.
 
 
-INSTALLATION
+##INSTALLATION
 
-Prerequisites:
+###Prerequisites:
 
 1.	You need to download PIN
 
@@ -55,7 +55,7 @@ Prerequisites:
     
     for further documentation on how to install ROOT
 
-Steps:
+###Steps:
 
 1. Run the getStarted.sh file with the following command
 
