@@ -2,4 +2,4 @@
 cd ~/cptnHook/Tests
 g++ -std=c++11 -o simpleFunc simpleFunc.cpp
 cd ../bin
-$PINDIR/pin -t myPinHookRoot.so -- ../Tests/simpleFunc
+$PINDIR/pin -t cptnHook.so -- ../Tests/simpleFunc
