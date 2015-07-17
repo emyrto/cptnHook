@@ -1,5 +1,5 @@
-#ifndef MYPINHOOKROOT_H
-#define MYPINHOOKROOT_H
+#ifndef CPTNHOOK_H
+#define CPTNHOOK_H
 
 /* ========================================================================= */
 /* Headers                                                                   */
@@ -66,14 +66,7 @@ std::vector<std::string> stackAsinVector;
 std::vector<std::string> stackAcosVector;
 std::vector<std::string> stackAtanVector;
 
-//std::vector<std::string> rtnStackVector (10);
-//static std::string dummyStr;
-//std::vector<int> addressVector;
 std::vector<std::vector<std::string>> rtnStackVector(10, std::vector<std::string>(10," "));
-//vector<pair<int,string>> funcIdAndStackVector;
-
-//int i = 0;
-//std::vector<int> rtnIDs;
 
 // Functions
 //ULong64_t myHash(std::string s, std::unordered_map <std::string, ULong64_t>& myMap, Int_t& ih);
@@ -83,7 +76,7 @@ void treeFill(double x, int rtnID, int rtnEnum);//, std::string stackRtn); //, A
 
 // Root TFile, TTree
 TFile * fPntr = new TFile("dataTree.root", "recreate");
-//auto* fPntr = new TFile("dataTree.root", "recreate");
+
 TTree * treeExpPntr = new TTree("treeExp", "Tree with data from the exp(x) function");
 TTree * treeSqrtPntr = new TTree("treeSqrt", "Tree with data from the sqrt(x) function");
 TTree * treeSinPntr = new TTree("treeSin", "Tree with data from the sin(x) function");
