@@ -26,7 +26,7 @@ code but rather by hooking into the machine code and probing the arguments of
 the functions.
 
 cptnHook has been implemented with C++ and uses PIN 
-(https://software.intel.com/en-us/articles/pintool)- a dynamic binary 
+(https://software.intel.com/en-us/articles/pintool) - a dynamic binary 
 instrumentation framework that enables the creation of dynamic program analysis 
 tools - for the purposes of probing the values inserted in mathematical functions 
 and obtaining the stack trace of each mathematical function that is used. 
