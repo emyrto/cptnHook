@@ -29,4 +29,4 @@ mv myPinHookRoot.so ../bin
 cd ../bin
 
 # Make a shared library
-g++ -shared -Wl,--hash-style=sysv -Wl,-Bsymbolic -Wl,--version-script=$PINDIR/source/include/pin/pintool.ver -o myPinHookRoot.so myPinHookRoot.o  -L$PINDIR/intel64/lib -L$PINDIR/intel64/lib-ext -L$PINDIR/intel64/runtime/glibc -L$PINDIR/extras/xed-intel64/lib -lpin -lxed -lpindwarf -ldl -L$ROOTSYS `root-config --cflags --libs`
+g++ -shared -Wl,--hash-style=sysv -Wl,-Bsymbolic -Wl,--version-script=$PINDIR/source/include/pin/pintool.ver -o cptnHook.so myPinHookRoot.o  -L$PINDIR/intel64/lib -L$PINDIR/intel64/lib-ext -L$PINDIR/intel64/runtime/glibc -L$PINDIR/extras/xed-intel64/lib -lpin -lxed -lpindwarf -ldl -L$ROOTSYS `root-config --cflags --libs`
