@@ -18,15 +18,11 @@ script = 'RTN %sRtn = RTN_FindByName(img, %s); \n\
 	{ \n\
 		RTN_Open(%sRtn); \n\
 		\n\
-		//int PinCCTLibInit(IsInterestingInsFptr isInterestingIns, FILE* logFile, CCTLibInstrumentInsCallback userCallback, VOID* userCallbackArg, BOOL doDataCentric = false); \n\
-		//int PinCCTLibInit(IsInterestingInsFptr isInterestingIns, TraceFile , CCTLibInstrumentInsCallback userCallback, VOID* userCallbackArg, false); \n\
 		// Instrument %s() to print the input argument value and the \n\
 		// return value.\n\
 		RTN_InsertCall(%sRtn, IPOINT_BEFORE, (AFUNPTR)Arg1Before, IARG_ADDRINT,\n\
 		               %s,IARG_FUNCARG_ENTRYPOINT_VALUE, 0, IARG_END); \n\
-		//print_stacktrace(); \n\
 		\n\
-		//TraceFile << "Function: %s" << " \t address: " << RTN_Address(%sRtn) << endl; \n\
 		TraceFile << "Function: %s" << endl<< "stack: "<< endl << Backtrace(skip=1) << endl; \n\
 		TraceFile << "%sRtn ID: " << std::dec << LEVEL_PINCLIENT::RTN_No(%sRtn) << endl; \n\
 		TraceFile << "--------------------------------------------------------------------------------" << endl; \n\
@@ -38,11 +34,6 @@ script = 'RTN %sRtn = RTN_FindByName(img, %s); \n\
 # --------------------------------------------------------------------------- #
 
 print '#include "pin.H"'
-#print '#include "stacktrace.h" \n'
-#print '#include <execinfo.h>   // for backtrace \n\
-#include <dlfcn.h>      // for dladdr \n\
-#include <cxxabi.h>     // for __cxa_demangle'
-
 
 print "//Declaration of Pin Interceptors."
 print '#if defined(TARGET_MAC)'
@@ -136,10 +127,6 @@ VOID Arg1Before(CHAR* name, double a)//CHAR * name, ADDRINT size)\n\
 			atanCntr++; \n\
 			break; \n\
 	}\n\
-	//std::ostringstream oss;\n\
-	//oss << name << "RTN";\n\
-	//std::string var = oss.str();\n\
-	\n\
 	TraceFile << "Function: " << name << "\t value: " << a << endl;\n\
 	treeFill(a, rtnID, callCntr[rtnID]); \n\
 	callCntr[rtnID]++; \n\
@@ -167,7 +154,6 @@ print '/* ======================================================================
 VOID Fini(INT32 code, VOID *v)\n\
 {\n\
 	TraceFile.close();\n\
-	//treeExpPntr->Print();\n\
 	\n\
 	fPntr->WriteObject(&stackVector, "stackVector");\n\
 	fPntr->Write();\n\
