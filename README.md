@@ -1,3 +1,7 @@
+----------------------------------------------------------------------------------------------------------------------                                                       cptnHook
+----------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------- ABSTRACT ------------------------------------------------------
 cptnHook is a tool which is able to display the values of the arguments passed 
 to mathematical functions in a scientific application (currently exp(x), 
 sqrt(x), sin(x), cos(x), tan(x), asin(x), acos(x), atan(x)).
@@ -26,3 +30,32 @@ tools - for the purposes of probing the values inserted in mathematical function
 and obtaining the stack trace of each mathematical function that is used. 
 
 The outputs of the tool are provided in ROOT format for further on analysis.
+
+--------------------------------------------------- INSTALLATION -----------------------------------------------------
+Prerequisites:
+1.	You need to download PIN
+    go here: https://software.intel.com/en-us/articles/pin-a-binary-instrumentation-tool-downloads
+    and download the appropriate version for LINUX according to your compiler.
+
+2.	set PINDIR as the path to the place you downloaded PIN
+    PINDIR=[path]
+    export $PINDIR
+
+3.	You need to install ROOT
+    go here: https://root.cern.ch/drupal/
+    for further documentation on how to install ROOT
+
+Steps:
+1. Run the getStarted.sh file with the following command
+    sh getStarted.sh
+  
+  This file will generate all required files and will construct a library called "cptnHook.so" which you will later on   use to hook your program.
+
+2. You may now run this library along an example that exists in the folder Tests. Simply run the script
+  "Compile_and_Run_Test.sh" with the following command:
+    sh Compile_and_Run_Test.sh
+
+  In order to use the library along a program name "myProg.cpp" you need to first compile it:
+    g++ -o myProg myProg.cpp
+  and then run it alongside PIN and the cptnHook library:
+    $PINDIR/pin -t cptnHook.so -- ../myProg
