@@ -46,9 +46,9 @@ The outputs of the tool are provided in ROOT (https://root.cern.ch/drupal/) form
 
 2.	set PINDIR as the path to the place where PIN was built:
 
-    PINDIR=[path]
+    `PINDIR=[path]`
 
-    export $PINDIR
+    `export $PINDIR`
 
 3.	You need to install ROOT
 
@@ -60,19 +60,19 @@ The outputs of the tool are provided in ROOT (https://root.cern.ch/drupal/) form
 
 1. Run the getStarted.sh file with the following command
 
-    sh getStarted.sh
+    `sh getStarted.sh`
   
   This file will generate all required files and will construct a library called "cptnHook.so" which you will later on   use to hook your program.
 
 2. You may now run this library along an example that exists in the folder Tests. Simply run the script
   "Compile_and_Run_Test.sh" with the following command:
 
-    sh Compile_and_Run_Test.sh
+    `sh Compile_and_Run_Test.sh`
 
   In order to use the library along a program name "myProg.cpp" you need to first compile it:
   
-    g++ -o myProg myProg.cpp
+    `g++ -o myProg myProg.cpp`
     
   and then run it alongside PIN and the cptnHook library:
   
-    $PINDIR/pin -t cptnHook.so -- ../myProg
+    `$PINDIR/pin -t cptnHook.so -- ../myProg`
