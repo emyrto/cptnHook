@@ -15,9 +15,9 @@
 echo $PINDIR
 
 # Get cptnHook
-git init
-git clone https://github.com/emyrto/cptnHook.git
-cd cptnHook/src
+#git init
+#git clone https://github.com/emyrto/cptnHook.git
+cd src
 
 # Generate the PIN interceptors
 python interceptorGen.py > interceptorGen.h
