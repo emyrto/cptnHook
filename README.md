@@ -30,6 +30,7 @@ cptnHook has been implemented with C++ and uses PIN
 instrumentation framework that enables the creation of dynamic program analysis 
 tools - for the purposes of probing the values inserted in mathematical functions 
 and obtaining the stack trace of each mathematical function that is used. 
+The tool is still in beta stage and further development is taking place.
 
 The outputs of the tool are provided in ROOT (https://root.cern.ch/drupal/) format for further on analysis.
 
