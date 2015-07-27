@@ -38,20 +38,7 @@ The outputs of the tool are provided in ROOT (https://root.cern.ch/drupal/) form
 ##Istallation
 
 ###Prerequisites:
-
-1.	You need to download PIN
-
-    go here: https://software.intel.com/en-us/articles/pin-a-binary-instrumentation-tool-downloads
-    
-    and download the appropriate version for LINUX according to your compiler.
-
-2.	set PINDIR as the path to the place where PIN was built:
-
-    `PINDIR=[path]`
-
-    `export $PINDIR`
-
-3.	You need to install ROOT
+1.	You need to install ROOT
 
     go here: https://root.cern.ch/drupal/
     
@@ -59,18 +46,18 @@ The outputs of the tool are provided in ROOT (https://root.cern.ch/drupal/) form
 
 ###Steps:
 
-1. Run the getStarted.sh file with the following command
+1. Simply run the getStarted.sh file with the following command
 
     `sh getStarted.sh`
   
-  This file will generate all required files and will construct a library called "libcptnHook.so" which you will later on   use to hook your program.
+  This file will generate all required files and will construct a library called "libcptnHook.so" which you will later on use to hook your program.
 
-2. You may now run this library along an example that exists in the folder Tests. Simply run the script
-  "Compile_and_Run_Test.sh" with the following command:
+2. You can now run this library along any executable. You can try it out with an example that exists in the folder Tests. 
+   Simply run the script "Compile_and_Run_Test.sh" with the following command:
 
     `sh Compile_and_Run_Test.sh`
 
-  In order to use the library along a program name "myProg.cpp" you need to first compile it:
+  For general use, in order to use the library along a program named "myProg.cpp" you need to first compile it:
   
     `g++ -o myProg myProg.cpp`
     
