@@ -21,7 +21,7 @@ echo Unpacking PIN...
 tar -zxf $PINTARBALL
 PINDIR=`pwd`/"$PINBASE"
 export PINDIR
-echo $PINDIR
+echo "PINDIR set at: " $PINDIR
 
 cd src
 
