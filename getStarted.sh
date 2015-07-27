@@ -5,6 +5,7 @@
 #	go here: https://root.cern.ch/drupal/
 #	for further documentation.
 
+mkdir bin
 echo $PINDIR
 
 # Get cptnHook
@@ -19,6 +20,7 @@ wget http://software.intel.com/sites/landingpage/pintool/downloads/"$PINTARBALL"
 echo Unpacking PIN...
 tar -zxf $PINTARBALL
 PINDIR=`pwd`/"$PINBASE"
+echo $PINDIR
 
 cd src
 
