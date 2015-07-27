@@ -60,9 +60,9 @@ The outputs of the tool are provided in ROOT (https://root.cern.ch/drupal/) form
 
   For general use remember to set the PINDIR env variable to $PINDIR. 
   
-        `PINDIR=[directory_where_the_cptnHook_file_was_downloaded]/cptnHook/pin-2.14-71313-gcc.4.4.7-linux`
-        `export PINDIR`
-        `echo PINDIR`
+    `PINDIR=[directory_where_the_cptnHook_file_was_downloaded]/cptnHook/pin-2.14-71313-gcc.4.4.7-linux`   
+    `export PINDIR`   
+    `echo PINDIR`
   
   In order to use the library along a program named "myProg.cpp" you need to first compile it:
   
