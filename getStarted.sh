@@ -20,6 +20,7 @@ wget http://software.intel.com/sites/landingpage/pintool/downloads/"$PINTARBALL"
 echo Unpacking PIN...
 tar -zxf $PINTARBALL
 PINDIR=`pwd`/"$PINBASE"
+export PINDIR
 echo $PINDIR
 
 cd src
