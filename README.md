@@ -52,12 +52,15 @@ The outputs of the tool are provided in ROOT (https://root.cern.ch/drupal/) form
   
   This file will generate all required files and will construct a library called "libcptnHook.so" which you will later on use to hook your program.
 
-2. You can now run this library along any executable. You can try it out with an example that exists in the folder Tests. 
+2. You can now run this library along any executable. 
+   You can try it out with an example that exists in the folder Tests. 
    Simply run the script "Compile_and_Run_Test.sh" with the following command:
 
     `sh Compile_and_Run_Test.sh`
+    
 
-  For general use, in order to use the library along a program named "myProg.cpp" you need to first compile it:
+  For general use remember to set the PINDIR env variable to $PINDIR. 
+  In order to use the library along a program named "myProg.cpp" you need to first compile it:
   
     `g++ -o myProg myProg.cpp`
     
