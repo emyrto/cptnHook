@@ -41,4 +41,6 @@ cd ../bin
 # Make a shared library
 g++ -shared -Wl,--hash-style=sysv -Wl,-Bsymbolic -Wl,--version-script=$PINDIR/source/include/pin/pintool.ver    -o libcptnHook.so cptnHook.o  -L$PINDIR/intel64/lib -L$PINDIR/intel64/lib-ext -L$PINDIR/intel64/runtime/glibc -L$PINDIR/extras/xed-intel64/lib -lpin -lxed -lpindwarf -ldl -L$ROOTSYS `root-config --cflags --libs`
 echo Compilation ended. 
-#Remember to set the PINDIR env variable to $PINDIR
+echo 
+echo The libcptnHook library is ready.
+echo To run an example run the following: sh Compile_and_Run_Test.sh
