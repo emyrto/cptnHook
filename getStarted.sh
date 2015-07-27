@@ -44,3 +44,4 @@ echo Compilation ended.
 echo 
 echo The libcptnHook library is ready.
 echo To run an example run the following: sh Compile_and_Run_Test.sh
+echo
