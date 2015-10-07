@@ -24,6 +24,8 @@ PIN_ROOT=`pwd`/"$PINBASE"
 export PIN_ROOT
 echo "PIN_ROOT set at: " $PIN_ROOT
 echo
+echo 0 > proc/sys/kernel/yama/ptrace_scope
+echo
 # Get CCTLib
 echo Getting CCTLib
 git init
@@ -56,7 +58,8 @@ mv "$PINHOOKNAME".o ../bin
 cd ../bin
 
 # Make a shared library
-g++ -shared -Wl,--hash-style=sysv -Wl,-Bsymbolic -Wl,--version-script=$PIN_ROOT/source/include/pin/pintool.ver -o lib$PINHOOKNAME.so $PINHOOKNAME.o  -L$PIN_ROOT/intel64/lib -L$PIN_ROOT/intel64/lib-ext -L$PIN_ROOT/intel64/runtime/glibc -L$PIN_ROOT/extras/xed-intel64/lib -lpin -lxed -lpindwarf -ldl -L$ROOTSYS `root-config --cflags --libs` -L$workingDir/cctlib/src/obj-intel64 -lcctlib -lcctlib_metric -lcctlib_tree_based -L$workingDir/cctlib/boost_1_56_0-install/lib/ -lboost_filesystem -lboost_system-mt -L$workingDir/cctlib/libelf-0.8.9-install/lib -lelf -L$PIN_ROOT/intel64/lib-ext -lpindwarf -L$PIN_ROOT/intel64/lib -lpin -lpinapp -lpinvm -lsapin
+#g++ -shared -Wl,--hash-style=sysv -Wl,-Bsymbolic -Wl,--version-script=$PIN_ROOT/source/include/pin/pintool.ver -L$PIN_ROOT/intel64/lib -L$PIN_ROOT/intel64/lib-ext -L$PIN_ROOT/intel64/runtime/glibc -L$PIN_ROOT/extras/xed-intel64/lib -lpin -lxed -lpindwarf -ldl -L$ROOTSYS `root-config --cflags --libs` -L$workingDir/cctlib/src/obj-intel64 -lcctlib -lcctlib_metric -lcctlib_tree_based -L$workingDir/cctlib/boost_1_56_0-install/lib/ -lboost_filesystem -lboost_system-mt -L$workingDir/cctlib/libelf-0.8.9-install/lib -lelf -L$PIN_ROOT/intel64/lib-ext -lpindwarf -L$PIN_ROOT/intel64/lib -lpin -lpinapp -lpinvm -lsapin -o lib$PINHOOKNAME.so $PINHOOKNAME.o
+g++ -shared -Wl,--hash-style=sysv -Wl,-Bsymbolic -Wl,--version-script=$PIN_ROOT/source/include/pin/pintool.ver -L$PIN_ROOT/intel64/lib -L$PIN_ROOT/intel64/lib-ext -L$PIN_ROOT/intel64/runtime/glibc -L$PIN_ROOT/extras/xed-intel64/lib -lpin -lxed -lpindwarf -ldl -L$ROOTSYS `root-config --cflags --libs` -L$workingDir/cctlib/src/obj-intel64 -lcctlib -lcctlib_metric -lcctlib_tree_based -L$workingDir/cctlib/boost_1_56_0-install/lib/ -lboost_filesystem -lboost_system -L$workingDir/cctlib/libelf-0.8.9-install/lib -lelf -L$PIN_ROOT/intel64/lib-ext -lpindwarf -L$PIN_ROOT/intel64/lib -lpin -lpinapp -lpinvm -lsapin -o lib$PINHOOKNAME.so $PINHOOKNAME.o
 
 cd ../
 
